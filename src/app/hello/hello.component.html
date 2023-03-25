@@ -1,0 +1,10 @@
+<h2>Hello there!</h2>
+<h3>Your name: {{user.name}}</h3>
+<p>Your age: {{user.age}}</p>
+
+<input type="text" [value]="user.name" />
+
+<button (click)="showInfo()">Click Me!</button>
+
+<p>Two ways binding</p>
+<input type="text" [(ngModel)]="user.name" />

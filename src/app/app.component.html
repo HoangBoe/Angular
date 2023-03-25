@@ -182,7 +182,7 @@
     padding-top: 45px;
     margin-top: 8px;
     overflow: hidden;
-    background-color: rgb(15, 15, 16);
+    /* background-color: rgb(15, 15, 16); */
   }
 
   .terminal::before {
@@ -202,7 +202,7 @@
 
   .terminal pre {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: white;
+    /* color: white; */
     padding: 0 1rem 1rem;
     margin: 0;
   }
@@ -393,6 +393,10 @@
   <input type="hidden" #selection>
 
   <div class="card-container">
+    <button class="card card-small" (click)="selection.value = 'helloComp'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      <span>Hello Component</span>
+    </button>
     <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
       <span>New Component</span>
@@ -426,12 +430,15 @@
 
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault>ng generate component xyz</pre>
+    <pre *ngSwitchDefault>
+      <app-hello></app-hello>
+    </pre>
       <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
       <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
       <pre *ngSwitchCase="'dependency'">ng add _____</pre>
       <pre *ngSwitchCase="'test'">ng test</pre>
       <pre *ngSwitchCase="'build'">ng build</pre>
+      <pre *ngSwitchCase="'component'">ng generate component xyz</pre>
   </div>
 
   <!-- Links -->

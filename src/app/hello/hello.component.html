@@ -1,10 +1,17 @@
 <h2>Hello there!</h2>
 <h3>Your name: {{user.name}}</h3>
 <p>Your age: {{user.age}}</p>
+<button (click)="user.age= user.age + 1">+</button>
+<button (click)="user.age= user.age - 1">-</button>
+<br><br>
 
-<input type="text" [value]="user.name" />
+<!-- thông thường -->
+<p>Dùng *ngIf</p>
+<div *ngIf="user.age >= 13">Bạn có thể xem nội dung PG-13</div>
+<div *ngIf="user.age < 13">Bạn không thể xem nội dung PG-13</div>
 
-<button (click)="showInfo()">Click Me!</button>
-
-<p>Two ways binding</p>
-<input type="text" [(ngModel)]="user.name" />
+<p>Dùng *ngTemplate</p>
+<div *ngIf="user.age >= 13; else under13">Bạn có thể xem nội dung PG-13</div>
+<ng-template #under13>
+  <div>Bạn không thể xem nội dung PG-13</div>
+</ng-template>

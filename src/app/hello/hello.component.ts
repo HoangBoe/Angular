@@ -10,7 +10,7 @@ export class HelloComponent {
     name: 'Hoang',
     age: 26
   }
-
+  checked = true;
   authors = [
     {
       id: 1,

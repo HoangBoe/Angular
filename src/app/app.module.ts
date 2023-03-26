@@ -8,6 +8,7 @@ import { HelloComponent } from './hello/hello.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
+import { ToggkleComponent } from './toggkle/toggkle.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
     HelloComponent,
     ProgressBarComponent,
     AuthorListComponent,
-    AuthorDetailComponent
+    AuthorDetailComponent,
+    ToggkleComponent
   ],
   imports: [
     BrowserModule,

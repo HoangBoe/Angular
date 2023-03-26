@@ -1,0 +1,10 @@
+<p>author-list works!</p>
+<app-author-detail *ngFor="let author of authors" [author]="author"
+  (deleteAuthor)="handleDelete($event)">
+</app-author-detail>
+<br><br>
+<div class="addItem">
+  <input [(ngModel)]="firstname" type="text" (click)="inputClick()">
+  <button (click)="addItem()">+</button>
+</div>
+

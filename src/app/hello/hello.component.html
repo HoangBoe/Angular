@@ -26,5 +26,14 @@
   </ng-template>
 </ng-container>
 
-<p>Custom two way binding</p>
-<app-toggkle [(checked)]="checked"></app-toggkle>
+<!-- <p>Custom two way binding</p>
+<app-toggkle [(checked)]="checked"></app-toggkle> -->
+
+<p>View Child/View Children</p>
+<br>
+<button (click)="toggleComp.toggle()">Toggle</button>
+<br>
+<br>
+<button (click)="toggleInside()">Toggle inside class</button>
+<br>
+<app-toggle #toggleComp></app-toggle>

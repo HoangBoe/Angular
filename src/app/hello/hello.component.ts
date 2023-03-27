@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ToggleComponent } from '../toggle/toggle.component';
 
 @Component({
   selector: 'app-hello',
   templateUrl: './hello.component.html',
   styleUrls: ['./hello.component.css']
 })
-export class HelloComponent {
+export class HelloComponent implements OnInit{
+  @ViewChild('toggleComp') toggleComp!: ToggleComponent;
+
+
   user = {
     name: 'Hoang',
     age: 26
@@ -30,4 +34,18 @@ export class HelloComponent {
     },
     // more data
   ];
+
+  ngOnInit() {
+    // toggle undefind khi ở oninit
+    console.log("onInit", this.toggleComp);
+  }
+
+  ngAfterViewInit() {
+    // khi dùng viewChild thì toggleComp sẽ có value khi ở ngAfterViewInit
+    console.log("viewInit", this.toggleComp)
+  }
+
+  toggleInside() {
+    this.toggleComp.toggle();
+  }
 }

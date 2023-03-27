@@ -1,39 +1,13 @@
-<h2>List Authors</h2>
+<p>content projection</p>
 
-<p>thông thường</p>
-<div *ngFor="let author of authors; index as idx; count as total">
-  ({{idx}}/{{total}}): {{author.id}} - {{author.firstName}} {{author.lastName}}
-</div>
+<app-toggle [(checked)]="questions.question1">
+  <h3 class="toogle-header">Header 1</h3>
+  <label>Question 1</label>
+  <span>Some paragraph</span>
+</app-toggle>
 
-<p>cấu trúc ngForOf và ngTemplate</p>
-<ng-template ngFor [ngForOf]="authors" let-author let-idx="index" let-total="count">
-  <div>
-    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
-    {{author.lastName}}
-  </div>
-</ng-template>
-
-<p>lồng nhiều structure directive có thẻ div trống nếu ko có phần tử</p>
-<div *ngFor="let author of authors">
-  <div *ngIf="author.id == 1">{{author.id}} :{{author.firstName}} {{author.lastName}}</div>
-</div>
-
-<p>lồng nhiều structure directive dùng ng-container, ng-template ko có div trống</p>
-<ng-container *ngFor="let author of authors">
-  <ng-template [ngIf]="author.id == 1">
-    <div>{{author.id}} :{{author.firstName}} {{author.lastName}}
-    </div>
-  </ng-template>
-</ng-container>
-
-<!-- <p>Custom two way binding</p>
-<app-toggkle [(checked)]="checked"></app-toggkle> -->
-
-<p>View Child/View Children</p>
-<br>
-<button (click)="toggleComp.toggle()">Toggle</button>
-<br>
-<br>
-<button (click)="toggleInside()">Toggle inside class</button>
-<br>
-<app-toggle #toggleComp></app-toggle>
+<app-toggle [(checked)]="questions.question2">
+  <h3 class="toogle-header">Header 2</h3>
+  <span>Some paragraph 2</span>
+  <label>Question 2</label>
+</app-toggle>

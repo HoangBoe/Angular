@@ -10,8 +10,7 @@ import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { ToggkleComponent } from './toggkle/toggkle.component';
 import { ToggleComponent } from './toggle/toggle.component';
-import { ArticleListComponent } from './article-list/article-list.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ArticleModule } from './article-list/article.module';
 
 @NgModule({
   declarations: [
@@ -21,14 +20,15 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     AuthorListComponent,
     AuthorDetailComponent,
     ToggkleComponent,
-    ToggleComponent,
-    ArticleListComponent,
-    ArticleDetailComponent
+    ToggleComponent
+
   ],
   imports: [
     BrowserModule,
+    ArticleModule,
     AppRoutingModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

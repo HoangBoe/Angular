@@ -521,12 +521,12 @@
       </app-progress-bar>
     </pre>
     <pre *ngSwitchCase="'router'">
-      <ul class="nav nav-pills card-header-pills" style="display: flex; list-style: none;">
+      <ul class="nav nav-pills card-header-pills">
         <li class="nav-item">
           <a class="nav-link" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink=":slug">Detail</a>
+          <a class="nav-link" routerLink="/article">Detail</a>
         </li>
       </ul>
       <router-outlet></router-outlet>

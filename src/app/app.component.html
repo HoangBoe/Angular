@@ -446,6 +446,12 @@
       </svg>
       <span>Hello Component</span>
     </button>
+    <button class="card card-small" (click)="selection.value = 'router'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+      </svg>
+      <span>Angular Router</span>
+    </button>
     <button class="card card-small" (click)="selection.value = 'progress-bar'" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
@@ -513,6 +519,17 @@
     <pre *ngSwitchCase="'progress-bar'">
       <app-progress-bar [progress]="'alibaba'" [backgroundColor]="'#9e9e9e'" [progressColor]="'#2e8b57'">
       </app-progress-bar>
+    </pre>
+    <pre *ngSwitchCase="'router'">
+      <ul class="nav nav-pills card-header-pills" style="display: flex; list-style: none;">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink=":slug">Detail</a>
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
     </pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
     <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
@@ -583,4 +600,4 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+
